@@ -29,6 +29,7 @@ module.exports = {
       { expiresIn: "1d" }
     );
 
+    console.log(user.role)
     res.json({ token, role: user.role });
   },
 

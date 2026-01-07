@@ -6,7 +6,7 @@ const role = require("../middlewares/role.middleware");
 
 const couponController = require("../controllers/coupon.controller");
 
-router.post("/", auth, role("admin"), couponController.createCoupon);
+router.post("/create", auth, role("admin"), couponController.createCoupon);
 router.get("/", auth, role("admin"), couponController.getCoupons);
 
 module.exports = router;

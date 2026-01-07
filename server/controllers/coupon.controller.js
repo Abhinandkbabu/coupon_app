@@ -3,6 +3,7 @@ const Coupon = require("../models/Couponmodel");
 module.exports = {
   createCoupon: async function (req, res) {
     try {
+        console.log(req.body)
       const coupon = await Coupon.create(req.body);
       res.status(201).json(coupon);
     } catch (error) {
