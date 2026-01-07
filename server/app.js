@@ -9,9 +9,16 @@ const orderRoutes = require("./routes/order.routes");
 
 const app = express();
 
-app.use(cors({
-    origin:"*"
-}));
+app.use(
+  cors({
+    origin: ["https://coupon-app-neon.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
+
+app.options("*", cors());
+
 app.use(express.json());
 
 app.use('/auth',authRoutes);
